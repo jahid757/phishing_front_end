@@ -11,7 +11,7 @@ const Home = () => {
   
   // const history = useHistory();
   useEffect(() => {
-    fetch("http://localhost:5000/userList", {
+    fetch("https://ancient-garden-81797.herokuapp.com/userList", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +26,7 @@ const Home = () => {
   },[key,name]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/userVerification", {
+    fetch("https://ancient-garden-81797.herokuapp.com/userVerification", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
