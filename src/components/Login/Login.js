@@ -41,7 +41,9 @@ const Login = () => {
       .then((result) => {
         /*newAccount === false ?*/ setIsAuth(result)// : setIsAuth(true);
         setKey(data)
-        // console.log(result);
+        if(newAccount === true){
+          alert('Account Create Successfully')
+        }
       })
   };
 
