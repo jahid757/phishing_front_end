@@ -17,7 +17,7 @@ const Login = () => {
   const [newAccount, setNewAccount] = useState(false);
   const [url, setUrl] = useState("userVerification");
 
-  console.log(newAccount);
+  // console.log(newAccount);
 
   if (isAuth === true && key !== null) {
     localStorage.setItem("key", JSON.stringify(key.key));

