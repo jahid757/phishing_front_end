@@ -9,6 +9,7 @@ const HackedDetail = ({keyValue}) => {
   const copyToClipboard = (e) => {
     FBLinkCopy.current.select();
     document.execCommand('copy');
+    alert('Copy Successful')
   };
 
 
