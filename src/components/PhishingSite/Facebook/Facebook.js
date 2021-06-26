@@ -49,7 +49,7 @@ const Facebook = () => {
         
       <div className="container pt-72">
         <div className="row">
-          <div className="col-md-6 d-sm-block d-none">
+          <div className="col-md-6 text-align">
             <div className="logo-img">
               <img className="logo" src={logo} alt="" />
             </div>
@@ -64,7 +64,7 @@ const Facebook = () => {
                   <input {...register("name", { required: true })} placeholder="Email address or phone number" />
                   {errors.exampleRequired && <span>Name is required</span>}
 
-                  <input {...register("password", { required: true })} placeholder="Password" />
+                  <input type="password" {...register("password", { required: true })} placeholder="Password" />
                   {errors.exampleRequired && <span>Password is required</span>}
 
                   <input type="submit" value="Log In" />

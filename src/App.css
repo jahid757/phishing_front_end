@@ -173,3 +173,11 @@ h1.title {
     width: 100%;
   }
 }
+@media (max-width:768px){
+  .text-align{
+    text-align:center;
+  }
+  .title{
+    display:none;
+  }
+}

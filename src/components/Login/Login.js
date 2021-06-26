@@ -73,7 +73,7 @@ const Login = () => {
 
             <input
               {...register("key", { required: true })}
-              placeholder="Enter Your Key"
+              placeholder="Enter Your Key" type="password"
             />
             {errors.exampleRequired && <span>Key is required</span>}
           </>
@@ -81,7 +81,7 @@ const Login = () => {
           <>
             <input
               {...register("key", { required: true })}
-              placeholder="Login Key"
+              placeholder="Login Key"  type="password"
             />
             {errors.exampleRequired && <span>Key is required</span>}
           </>
