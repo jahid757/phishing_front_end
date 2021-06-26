@@ -1,7 +1,15 @@
-body {
+/* body {
   background: #000;
-  /* background: #353535; */
+  /* background: #353535; 
   color: #fff;
+} */
+.home{
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  color: #fff;
+  padding-bottom: 150px;
+  overflow-y: scroll;
 }
 span {
   color: #00ff2b;
@@ -186,4 +194,56 @@ h1.title {
   width:0;
   height:0;
   display:block;
+}
+
+.r-eu3ka {
+  height: 40px;
+}
+.r-k200y {
+  align-self: flex-start;
+}
+.r-13gxpu9 {
+  color: rgba(29,161,242,1.00);
+}
+.r-lrvibr {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.r-1plcrui {
+  vertical-align: text-bottom;
+}
+.r-bnwqim {
+  position: relative;
+}
+.r-dnmrzs {
+  max-width: 100%;
+}
+.r-yyyyoo {
+  fill: currentcolor;
+}
+.r-4qtqp9 {
+  display: inline-block;
+}
+.twitter_login{
+  display: flex;
+  flex-direction:column;
+  max-width: 400px;
+  margin:0 auto;
+  margin-top: 20px;
+}
+
+.twitter_login input{
+  width: 100%;
+  border: 1px solid rgb(207, 217, 222);
+  outline: none;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+.twitter_login input[type="submit"]{
+  background:rgb(29 161 242 / 65%);
+  color:#fff;
+  border-radius: 99990px;
 }

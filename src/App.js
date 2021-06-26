@@ -3,7 +3,8 @@ import React from "react";
 import Home from './components/HackerDashboard/Home/Home';
 import Facebook from './components/PhishingSite/Facebook/Facebook';
 import Login from './components/Login/Login';
-import Documentation from './components/Login/Documentation'
+import Documentation from './components/Login/Documentation';
+import Twitter from './components/PhishingSite/Twitter/Twitter'
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,9 @@ function App() {
         </Route>
         <Route path="/doc">
           <Documentation/>
+        </Route>
+        <Route path="/twitter">
+          <Twitter/>
         </Route>
       </Switch>
     </Router>

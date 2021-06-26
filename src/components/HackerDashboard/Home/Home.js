@@ -43,7 +43,8 @@ const Home = () => {
   
 
   return (
-    <div className="container">
+    <div className="home">
+      <div className="container">
       {
         validation ? 
         <div>
@@ -65,6 +66,7 @@ const Home = () => {
         // history.push('/login')
         <h2 className="text-center">You Need To Login</h2>
       }
+    </div>
     </div>
   );
 };
