@@ -49,7 +49,8 @@ const Login = () => {
 
 
   return (
-    <div className="container text-center login">
+    <div className="home">
+      <div className="container text-center login">
       <img className="hacker_avatar" src={hacker} alt="" />
       <h2>Admin Login</h2>
       <div className="">
@@ -90,6 +91,7 @@ const Login = () => {
         <input type="submit" value="Log In" />
         <Link to="/doc"><span className="name">Documentation</span></Link>
       </form>
+    </div>
     </div>
   );
 };
