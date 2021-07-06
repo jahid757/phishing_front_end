@@ -1,34 +1,30 @@
-import './App.css';
+import "./App.css";
 import React from "react";
-import Home from './components/HackerDashboard/Home/Home';
-import Facebook from './components/PhishingSite/Facebook/Facebook';
-import Login from './components/Login/Login';
-import Documentation from './components/Login/Documentation';
-import Twitter from './components/PhishingSite/Twitter/Twitter'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+import Home from "./components/HackerDashboard/Home/Home";
+import Facebook from "./components/PhishingSite/Facebook/Facebook";
+import Login from "./components/Login/Login";
+import Documentation from "./components/Login/Documentation";
+import Twitter from "./components/PhishingSite/Twitter/Twitter";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Home/>
+          <Home />
         </Route>
         <Route path="/facebook">
-          <Facebook/>
+          <Facebook />
         </Route>
         <Route path="/login">
-          <Login/>
+          <Login />
         </Route>
         <Route path="/doc">
-          <Documentation/>
+          <Documentation />
         </Route>
         <Route path="/twitter">
-          <Twitter/>
+          <Twitter />
         </Route>
       </Switch>
     </Router>
