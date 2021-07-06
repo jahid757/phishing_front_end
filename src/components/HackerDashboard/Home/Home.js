@@ -56,7 +56,7 @@ const Home = () => {
             <span>Login Id:</span> <span className="name">{key}</span>
           </h4>
           <h4 className="text-center">
-            <span>Login Name:</span> <span className="name">{name[0].name}</span>
+            <span>Login Name:</span> <span className="name">{name[0].name ? name[0].name : 'Refresh For Name'}</span>
             </h4>
           {
             <HackedDetail keyValue={key}/>

