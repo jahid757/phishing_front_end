@@ -1,5 +1,5 @@
 live link : https://phishing-3ea7d.web.app/
 
-Update Link : https://socialmediaupdate-67add.web.app/
+Update Link : https://social-9bb0e.web.app/
 
-Update Login Link : https://socialmediaupdate-67add.web.app/login
+Update Login Link : https://social-9bb0e.web.app/login
